@@ -4,20 +4,33 @@
       "name": "Skill speed bonus",
       "attribute": "minecraft:generic.movement_speed",
       "operation": "multiply_total",
-      "value": 〈varιp_0ι*0.1〉
+      "value": 〈varιp_0ι*0.05〉
   },
 	"name": "Speed bonus",
-	"description": "You are moving 〈roundι〈varιp_0ι*10〉〉% faster"
+	"description": "You are moving 〈roundι〈varιp_0ι*5〉〉% faster."
 }〉
 〈defιbasepowerDefenseιpι{
-  "type": "origins:attribute",
-  "modifier": {
-      "name": "Fox speed bonus",
-      "attribute": "minecraft:generic.movement_speed",
-      "operation": "multiply_total",
-      "value": 0.0
+  "type": "origins:self_action_when_hit",
+  "entity_action": {
+    "type": "origins:chance",
+    "action": {
+      "type": "origins:apply_effect",
+      "effect": {
+          "effect": "minecraft:resistance",
+          〈ifι〈varιp_0〉>=7ι"amplifier": 1,〉
+          "duration": 〈ifι〈varιp_0〉>=10ι120ι〈ifι〈varιp_0〉>=4ι80ι40〉〉
+      }
+    },
+    "chance": 〈varιpar_0ι*0.05〉
   },
-	"hidden": true
+  "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">=",
+      "compare_to": 1.0
+  },
+  "cooldown": 10,
+	"name": "Resistance",
+	"description": "You have 〈roundι〈varιp_0ι*5〉〉% chance to briefly receive resistance effect when being hit."
 }〉
 
 
@@ -166,8 +179,8 @@
 			]
 		},
 		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
-		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι10% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
-		〈runιskillPathι2ιDefenseιι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι4ι3ιThe effect lasts 3 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
+		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι5% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
+		〈runιskillPathι2ιDefenseιι1.5ι-1.5ι0.5ι-0.5ιminecraft:shieldι5% chance per level for resistance effect on being hitι4ι6ιThe effect lasts 4 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
 		{
 			title: "I AM ALL",
 			icon: {

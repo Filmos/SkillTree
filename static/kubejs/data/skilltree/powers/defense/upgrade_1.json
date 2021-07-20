@@ -1,10 +1,5 @@
 {
-  "type": "origins:attribute",
-  "modifier": {
-      "name": "Fox speed bonus",
-      "attribute": "minecraft:generic.movement_speed",
-      "operation": "multiply_total",
-      "value": 0.0
-  },
-	"hidden": true
+  "type": "origins:multiple",
+  "name": "Longer effect",
+  "description": "Resistance now lasts 4 seconds."
 }

@@ -1,10 +1,16 @@
 {
-  "type": "origins:attribute",
-  "modifier": {
-      "name": "Fox speed bonus",
-      "attribute": "minecraft:generic.movement_speed",
-      "operation": "multiply_total",
-      "value": 0.0
-  },
-	"hidden": true
+  "type": "origins:stacking_status_effect",
+  "min_stacks": 0,
+  "max_stacks": 1,
+  "duration_per_stack": 45,
+  "effects": [
+      {
+          "effect": "minecraft:speed",
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": false
+      }
+  ],
+  "name": "Permanent speed I effect",
+  "description": "You are constantly under speed I effect, making you speedier."
 }
