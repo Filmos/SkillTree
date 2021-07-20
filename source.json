@@ -40,7 +40,7 @@
 		〈forιjι〈varιpar_countι/3-3〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*3+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*3+9〉〉: 〈varιpar_〈varιjι*3+11〉〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987-15〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987-14〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
 	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
 		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+1〉〉",
