@@ -1,0 +1,10 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+      "name": "Fox speed bonus",
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "multiply_total",
+      "value": 0.0
+  },
+	"hidden": true
+}
