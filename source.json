@@ -39,8 +39,8 @@
 		〈forιjι〈varιpar_countι/3-3〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*3+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*3+9〉〉: 〈varιpar_〈varιjι*3+11〉〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉"ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉"〉〉],
-	id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987〉〉",
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"〈ifι〈varιspecial〉ι10F0F0F0F0F0F002ι10F0F0F0F0F0F001〉"],
+	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
 		id: "〈uidιFFFFFFFFFFFFFFFF〉",
 		type: "checkmark",
@@ -90,9 +90,94 @@
 	title: "Skill Tree",
 	icon: "kubejs:skill_point",
 	default_quest_shape: "",
-	quests: [〈-ι
-		syntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
+	quests: [
+		{
+			title: "Affordable",
+			icon: {
+				id: "ftbquests:custom_icon",
+				Count: 1b,
+				tag: {
+					Icon: "ftbquests:textures/gui/shop.png"
+				}
+			},
+			x: 0.0d,
+			y: 0.0d,
+			disable_toast: true,
+			hide_dependency_lines: true,
+			hide: true,
+			hide_text_until_complete: true,
+			size: 0.07d,
+			id: "10F0F0F0F0F0F000",
+			tasks: [
+				{
+					id: "10F0F0F0F0F0F001",
+					type: "custom",
+					title: "1 skill point",
+					icon: "kubejs:skill_point",
+					disable_toast: true
+				},
+				{
+					id: "10F0F0F0F0F0F002",
+					type: "custom",
+					title: "2 skill points",
+					icon: {
+						id: "kubejs:skill_point",
+						Count: 2b
+					},
+					disable_toast: true
+				}
+			]
+		},
+		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
 		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι10% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
-		〈runιskillPathι2ιDefenseι1989ι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι4ι3ιThe effect lasts 3 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉
+		〈runιskillPathι2ιDefenseι1989ι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι4ι3ιThe effect lasts 3 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
+		{
+			title: "I AM ALL",
+			icon: {
+				id: "ftbquests:custom_icon",
+				Count: 1b,
+				tag: {
+					Icon: "ftbquests:textures/gui/shop.png"
+				}
+			},
+			x: 0.0d,
+			y: 0.0d,
+			disable_toast: true,
+			hide_dependency_lines: true,
+			hide: true,
+			hide_text_until_complete: true,
+			size: 0.07d,
+			id: "0F0F0F0F0F0F0F0F",
+			dependencies: ["F0F0F0F0F0F0F000"〈readSpaceιallQuests〉],
+			tasks: [
+				{
+					id: "FC4AAC6225DE5000",
+					type: "custom",
+					title: "THERE IS NOTHING LEFT",
+					icon: "kubejs:skill_point",
+					disable_toast: true
+				}
+			]
+		},
+		{
+			title: "Reset skills",
+			x: 0.0d,
+			y: 0.0d,
+			subtitle: "Reset all your skills and return your skill points",
+			id: "6BF09FDD8D77E0B1",
+			tasks: [{
+				id: "3173DB01F7DA3BD9",
+				type: "checkmark",
+				title: "RESET",
+				icon: "minecraft:barrier"
+			}],
+    	rewards: [{
+    		id: "81543D443D36D000",
+    		type: "command",
+    		auto: "invisible",
+    		command: "/ftbquests change_progress @p reset_deps 0F0F0F0F0F0F0F0F",
+    		player_command: false
+    	}]
+		}
 	]
 }〉
