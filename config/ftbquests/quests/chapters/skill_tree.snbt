@@ -1,3 +1,39 @@
+〈defιskillPathιparι〈forιiι10ι{
+	title: "〈varιpar_1〉 〈romanι〈varιiι+1〉〉",
+	icon: 〈ifι〈forᛍspecialιjι〈varιpar_countι/2-4.5〉ι〈ifι〈varιiι+1〉==〈varιpar_〈varιjι*2+9〉〉ι1〉〉ι{
+		id: "〈varιpar_7〉",
+		Count: 1b,
+		tag: {
+			Enchantments: [{
+				lvl: 1s,
+				id: "minecraft:power"
+			}]
+		}
+	}ι"〈varιpar_7〉"〉,
+	x: 〈roundι〈varιiι*〈varιpar_5〉+〈varιpar_3〉〉ι0.5〉d,
+	y: 〈roundι〈varιiι*〈varιpar_6〉+〈varιpar_4〉〉ι0.5〉d,
+	subtitle: "〈varιpar_8〉",
+	description: [
+		〈forιjι〈varιpar_countι/2-4.5〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*2+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*2+9〉〉: 〈varιpar_〈varιjι*2+10〉〉"ι,
+		〉
+	],
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉"ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉"〉〉],
+	id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987〉〉",
+	tasks: [{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "checkmark",
+		title: "Cost: 〈ifι〈varιspecial〉ι2 skill pointsι1 skill point〉"
+	}],
+	rewards: [{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/say Hi, @p!",
+		player_command: false
+	}]
+}ι, 〉〉
+
+
 {
 	id: "354D29F66C12B3DA",
 	group: "",
@@ -7,40 +43,7 @@
 	icon: "kubejs:skill_point",
 	default_quest_shape: "",
 	quests: [
-		〈forιiι10ι{
-			title: "Agility 〈romanι〈varιiι+1〉〉",
-			icon: 〈ifι〈varιiι+1〉==4||〈varιiι+1〉==7||〈varιiι+1〉==10ι{
-				id: "minecraft:sugar",
-				Count: 1b,
-				tag: {
-					Enchantments: [{
-						lvl: 1s,
-						id: "minecraft:power"
-					}]
-				}
-			}ι"minecraft:sugar"〉,
-			x: 〈roundι〈varιiι*0.5+1〉ι0.5〉d,
-			y: 〈roundι〈varιiι*0.5+1〉ι0.5〉d,
-			subtitle: "10% speed boost per level",
-			description: [
-				"&〈ifι〈varιiι+1〉>=4ιaι8〉Level 4: Permanent speed I effect",
-				"&〈ifι〈varιiι+1〉>=7ιaι8〉Level 7: Resistance to slowness",
-				"&〈ifι〈varιiι+1〉>=10ιaι8〉Level 10: Permanent speed II effect"
-			],
-			dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+1986〉〉"〉],
-			id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι+1987〉〉",
-			tasks: [{
-				id: "〈uidιFFFFFFFFFFFFFFFF〉",
-				type: "checkmark",
-				title: "Cost: 1 skill point"
-			}],
-			rewards: [{
-				id: "〈uidιFFFFFFFFFFFFFFFF〉",
-				type: "command",
-				auto: "invisible",
-				command: "/say Hi, @p!",
-				player_command: false
-			}]
-		}ι, 〉
+		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι10% speed boost per levelι4ιPermanent speed I effectι7ιResistance to slownessι10ιPermanent speed II effect〉,
+		〈runιskillPathι2ιDefenseι1989ι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι3ιThe effect lasts 3 secondsι6ιThe effect is now level 2ι9ιThe effect lasts 6 seconds〉
 	]
 }
