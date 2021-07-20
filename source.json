@@ -1,5 +1,5 @@
 〈defιskillPathιparι〈forιiι10ι{
-	title: "〈varιpar_1〉 〈romanι〈varιiι+1〉〉",
+	title: "〈=ᛍtitleι〈varιpar_1〉 〈romanι〈varιiι+1〉〉〉",
 	icon: 〈ifι〈forᛍspecialιjι〈varιpar_countι/2-4.5〉ι〈ifι〈varιiι+1〉==〈varιpar_〈varιjι*2+9〉〉ι1〉〉ι{
 		id: "〈varιpar_7〉",
 		Count: 1b,
@@ -28,13 +28,33 @@
 		id: "〈uidιFFFFFFFFFFFFFFFF〉",
 		type: "command",
 		auto: "invisible",
-		command: "/say Hi, @p!",
+		command: "/origin set @p skilltree:〈caseᛍfilenameιlowerι〈varιpar_1〉〉 skilltree:〈varιfilename〉/〈varιiι+1〉",
 		player_command: false
 	}]
-}ι, 〉〉
+}〈toFileιout\kubejs\data\skilltree\origins\〈varιfilename〉\〈varιiι+1〉.jsonι{
+  "powers":[],
+  "icon": "〈varιpar_7〉",
+	"order": 〈varιiι+1〉,
+	"impact": 1,
+  "name":"〈varιtitle〉",
+  "description":" ",
+  "unchoosable": true
+}
+〉ι, 〉
+〈toFileιout\kubejs\data\skilltree\origin_layers\〈varιfilename〉.jsonι{
+	"name": "〈varιfilename〉 skill",
+  "replace": false,
+  "origins": [
+	   〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
+		 〉
+  ]
+}
+
+〉
+〉
 
 
-{
+〈toFileιout\config\ftbquests\quests\chapters\skill_tree.snbtι{
 	id: "354D29F66C12B3DA",
 	group: "",
 	order_index: 0,
@@ -46,4 +66,4 @@
 		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι10% speed boost per levelι4ιPermanent speed I effectι7ιResistance to slownessι10ιPermanent speed II effect〉,
 		〈runιskillPathι2ιDefenseι1989ι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι3ιThe effect lasts 3 secondsι6ιThe effect is now level 2ι9ιThe effect lasts 6 seconds〉
 	]
-}
+}〉
