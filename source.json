@@ -20,6 +20,16 @@
 	"hidden": true
 }〉
 
+
+〈toFileι〈=ᛍreloadFilenameιout\kubejs\data\skilltree\functions\reload_points.mcfunction〉ι
+
+
+
+
+
+〉
+
+
 〈defιskillPathιparι〈forιiι10ι{
 	title: "〈=ᛍtitleι〈varιpar_1〉 〈romanι〈varιiι+1〉〉〉",
 	icon: 〈ifι〈forᛍspecialιjι〈varιpar_countι/3-3〉ι〈ifι〈varιiι+1〉==〈varιpar_〈varιjι*3+9〉〉ι1〉〉ι{
@@ -39,7 +49,7 @@
 		〈forιjι〈varιpar_countι/3-3〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*3+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*3+9〉〉: 〈varιpar_〈varιjι*3+11〉〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"〈ifι〈varιspecial〉ι10F0F0F0F0F0F002ι10F0F0F0F0F0F001〉"],
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
 	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
 		id: "〈uidιFFFFFFFFFFFFFFFF〉",
@@ -51,6 +61,36 @@
 		type: "command",
 		auto: "invisible",
 		command: "/origin set @p skilltree:〈caseᛍfilenameιlowerι〈varιpar_1〉〉 skilltree:〈varιfilename〉/〈varιiι+1〉",
+		player_command: false
+	},{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/scoreboard players remove @p SkillPoints 〈varιskillCost〉",
+		player_command: false
+	},{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/scoreboard players add @p UsedSkillPoints 〈varιskillCost〉",
+		player_command: false
+	},{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/ftbquests change_progress @p reset 10F0F0F0F0F0F000",
+		player_command: false
+	},{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/ftbquests change_progress @p[scores={SkillPoints=1..}] complete 10F0F0F0F0F0F001",
+		player_command: false
+	},{
+		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		type: "command",
+		auto: "invisible",
+		command: "/ftbquests change_progress @p[scores={SkillPoints=2..}] complete 10F0F0F0F0F0F002",
 		player_command: false
 	}]
 〈toFileιout\kubejs\data\skilltree\powers\〈varιfilename〉\base_〈varιiι+1〉.jsonι
