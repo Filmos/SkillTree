@@ -21,15 +21,6 @@
 }〉
 
 
-〈toFileι〈=ᛍreloadFilenameιout\kubejs\data\skilltree\functions\reload_points.mcfunction〉ι
-
-
-
-
-
-〉
-
-
 〈defιskillPathιparι〈forιiι10ι{
 	title: "〈=ᛍtitleι〈varιpar_1〉 〈romanι〈varιiι+1〉〉〉",
 	icon: 〈ifι〈forᛍspecialιjι〈varιpar_countι/3-3〉ι〈ifι〈varιiι+1〉==〈varιpar_〈varιjι*3+9〉〉ι1〉〉ι{
@@ -49,45 +40,45 @@
 		〈forιjι〈varιpar_countι/3-3〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*3+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*3+9〉〉: 〈varιpar_〈varιjι*3+11〉〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987-1〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
-	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987-15〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
+	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+1〉〉",
 		type: "checkmark",
 		title: "Cost: 〈ifι〈varιspecial〉ι2 skill pointsι1 skill point〉"
 	}],
 	rewards: [{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+2〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/origin set @p skilltree:〈caseᛍfilenameιlowerι〈varιpar_1〉〉 skilltree:〈varιfilename〉/〈varιiι+1〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+3〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/scoreboard players remove @p SkillPoints 〈varιskillCost〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+4〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/scoreboard players add @p UsedSkillPoints 〈varιskillCost〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+5〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p reset 10F0F0F0F0F0F000",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+6〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p[scores={SkillPoints=1..}] complete 10F0F0F0F0F0F001",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFF〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+7〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p[scores={SkillPoints=2..}] complete 10F0F0F0F0F0F002",
@@ -118,7 +109,13 @@
   ]
 }
 
-〉
+〉〈toSpaceιresetLayersι,{
+  id: "〈uidιFFFFFFFFFFFFFFFFι〈varιpar_0ι*5+198〉〉",
+  type: "command",
+  auto: "invisible",
+  command: "/origin set @p skilltree:〈varιfilename〉 origins:empty",
+  player_command: false
+}〉
 〉
 
 
@@ -170,7 +167,7 @@
 		},
 		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
 		〈runιskillPathι1ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι10% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
-		〈runιskillPathι2ιDefenseι1989ι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι4ι3ιThe effect lasts 3 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
+		〈runιskillPathι2ιDefenseιι1.5ι-1.5ι0.5ι-0.5ιminecraft:stoneι5% chance per level for resistance effect on being hitι4ι3ιThe effect lasts 3 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
 		{
 			title: "I AM ALL",
 			icon: {
@@ -188,7 +185,7 @@
 			hide_text_until_complete: true,
 			size: 0.07d,
 			id: "0F0F0F0F0F0F0F0F",
-			dependencies: ["F0F0F0F0F0F0F000"〈readSpaceιallQuests〉],
+			dependencies: ["10F0F0F0F0F0F000","6BF09FDD8D77E0B1"〈readSpaceιallQuests〉],
 			tasks: [
 				{
 					id: "FC4AAC6225DE5000",
@@ -199,25 +196,52 @@
 				}
 			]
 		},
-		{
+    {
 			title: "Reset skills",
+			icon: "minecraft:barrier",
 			x: 0.0d,
 			y: 0.0d,
 			subtitle: "Reset all your skills and return your skill points",
 			id: "6BF09FDD8D77E0B1",
 			tasks: [{
-				id: "3173DB01F7DA3BD9",
-				type: "checkmark",
-				title: "RESET",
-				icon: "minecraft:barrier"
+				id: "2A0BE8FE38B7AC52",
+				type: "item",
+				title: "Cost: 1 dollar",
+				item: "calemiutils:coin_dollar",
+				consume_items: true,
+				only_from_crafting: false
 			}],
-    	rewards: [{
-    		id: "81543D443D36D000",
+			rewards: [{
+				id: "BF47367051C97000",
+				type: "command",
+				auto: "invisible",
+				command: "/scoreboard players operation @p SkillPoints = @p TotalSkillPoints",
+				player_command: false
+			},{
+				id: "2E323D644792C000",
+				type: "command",
+				auto: "invisible",
+				command: "/scoreboard players set @p UsedSkillPoints 0",
+				player_command: false
+			},{
+    		id: "DF03409CEC067000",
     		type: "command",
     		auto: "invisible",
     		command: "/ftbquests change_progress @p reset_deps 0F0F0F0F0F0F0F0F",
     		player_command: false
-    	}]
+    	},{
+    		id: "831832E4526F6000",
+    		type: "command",
+    		auto: "invisible",
+    		command: "/ftbquests change_progress @p[scores={SkillPoints=1..}] complete 10F0F0F0F0F0F001",
+    		player_command: false
+    	},{
+    		id: "A74AFBF6A34F4000",
+    		type: "command",
+    		auto: "invisible",
+    		command: "/ftbquests change_progress @p[scores={SkillPoints=2..}] complete 10F0F0F0F0F0F002",
+    		player_command: false
+    	}〈readSpaceιresetLayers〉]
 		}
 	]
 }〉
