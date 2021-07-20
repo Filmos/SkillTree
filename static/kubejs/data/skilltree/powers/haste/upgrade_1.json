@@ -1,0 +1,29 @@
+{
+  "type": "origins:modify_harvest",
+  "block_condition": {
+    "type": "origins:or",
+    "conditions": 
+    [{
+      "type": "origins:in_tag",
+      "tag": "forge:cobblestone"
+    },{
+      "type": "origins:in_tag",
+      "tag": "forge:wg_stone"
+    },{
+      "type": "origins:in_tag",
+      "tag": "minecraft:base_stone_overworld"
+    },{
+      "type": "origins:in_tag",
+      "tag": "forge:stone"
+    },{
+      "type": "origins:in_tag",
+      "tag": "origins:natural_stone"
+    },{
+      "type": "origins:in_tag",
+      "tag": "forge:sandstone"
+    }]
+  },
+  "allow": true,
+  "name": "Hard fists.",
+  "description": "You can mine most of natural stone blocks with your bare fists."
+}

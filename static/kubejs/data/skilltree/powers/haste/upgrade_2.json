@@ -1,0 +1,17 @@
+{
+  "type": "origins:modify_harvest",
+  "block_condition": {
+    "type": "origins:or",
+    "conditions": 
+    [{
+      "type": "origins:in_tag",
+      "tag": "twilightforest:ore_magnet/minecraft/stone"
+    },{
+      "type": "origins:in_tag",
+      "tag": "forge:ores"
+    }]
+  },
+  "allow": true,
+  "name": "Very hard fists.",
+  "description": "You can mine most ores with your bare fists."
+}
