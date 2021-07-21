@@ -21,7 +21,7 @@
           "duration": 〈ifι〈varιp_0〉>=10ι120ι〈ifι〈varιp_0〉>=4ι80ι40〉〉
       }
     },
-    "chance": 〈varιpar_0ι*0.05〉
+    "chance": 〈varιp_0ι*0.05〉
   },
   "damage_condition": {
       "type": "origins:amount",
@@ -40,6 +40,36 @@
     },
   	"name": "Fast hands",
   	"description": "You are mining 〈roundι〈varιp_0ι*15〉〉% faster."
+}〉
+〈defιbasepowerOffenseιpι{
+  "type": "origins:target_action_on_hit",
+  "entity_action": {
+    "type": "origins:chance",
+    "action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:set_on_fire",
+          "duration": 〈ifι〈varιp_0〉>=4ι8ι3〉
+        }〈ifι〈varιp_0〉>=4ι,{
+          "type": "origins:chance",
+          "action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:wither",
+                〈ifι〈varιp_0〉>=7ι"amplifier": 1,〉
+                "duration": 160
+            }
+          },
+          "chance": 〈varιp_0ι*0.04〉
+        }〉
+      ]
+    },
+    "chance": 〈varιp_0ι*0.04〉
+  },
+  "cooldown": 5,
+	"name": "Fire touch",
+	"description": "You have 〈roundι〈varιp_0ι*4〉〉% chance to briefly set the hit entity on fire."
 }〉
 
 
@@ -136,7 +166,7 @@
   id: "〈uidιFFFFFFFFFFFFFFFFι〈varιpar_0ι*5+198〉〉",
   type: "command",
   auto: "invisible",
-  command: "/origin set @p skilltree:〈varιfilename〉 origins:empty",
+  command: "/origin set @p skilltree:〈varιfilename〉 skilltree:blank",
   player_command: false
 }〉
 〈toSpaceιinvincibilityFixι"skilltree:〈varιfilename〉",〉
@@ -191,8 +221,9 @@
 		},
 		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
     〈runιskillPathι1ιHasteιι-1.5ι-1.5ι-0.5ι-0.5ιminecraft:golden_pickaxeι15% mining speed boost per levelι4ι7ιFists can break natural stoneι7ι4ιFists can break oresι10ι1ιFists can break obsidian〉,
+		〈runιskillPathι2ιOffenseιι1.5ι-1.5ι0.5ι-0.5ιtwilightforest:fiery_swordι4% chance per level to lit enemy on fireι4ι7ιFire lasts longerι7ι3ιChance for wither effect as wellι10ι1ιWither effect is now level 2〉,
+    〈runιskillPathι3ιDefenseιι-1.5ι1.5ι-0.5ι0.5ιminecraft:shieldι5% chance per level for resistance effect on being hitι4ι6ιThe effect lasts 4 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
 		〈runιskillPathι4ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι5% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
-		〈runιskillPathι3ιDefenseιι1.5ι-1.5ι0.5ι-0.5ιminecraft:shieldι5% chance per level for resistance effect on being hitι4ι6ιThe effect lasts 4 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
 		{
 			title: "I AM ALL",
 			icon: {
