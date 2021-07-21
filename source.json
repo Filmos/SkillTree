@@ -69,7 +69,7 @@
   },
   "cooldown": 5,
 	"name": "Fire touch",
-	"description": "You have 〈roundι〈varιp_0ι*4〉〉% chance to briefly set the hit entity on fire."
+	"description": "You have 〈roundι〈varιp_0ι*4〉〉% chance to 〈ifι〈varιp_0〉<4ιbriefly 〉set the hit entity on fire."
 }〉
 
 
@@ -159,7 +159,8 @@
     "skilltree:blank",
 	  〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
 		〉
-  ]
+  ],
+  "order": 〈varιpar_0ι+10〉
 }
 
 〉〈toSpaceιresetLayersι,{
