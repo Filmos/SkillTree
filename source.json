@@ -126,8 +126,9 @@
 	"name": "〈varιfilename〉 skill",
   "replace": false,
   "origins": [
-	   〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
-		 〉
+    "skilltree:blank",
+	  〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
+		〉
   ]
 }
 
@@ -138,6 +139,7 @@
   command: "/origin set @p skilltree:〈varιfilename〉 origins:empty",
   player_command: false
 }〉
+〈toSpaceιinvincibilityFixι"skilltree:〈varιfilename〉",〉
 〉
 
 
@@ -188,7 +190,7 @@
 			]
 		},
 		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
-    〈runιskillPathι1ιHasteιι-1.5ι-1.5ι-0.5ι-0.5ιminecraft:shieldι15% mining speed boost per levelι4ι7ιFists can break natural stoneι7ι4ιFists can break oresι10ι1ιFists can break obsidian〉,
+    〈runιskillPathι1ιHasteιι-1.5ι-1.5ι-0.5ι-0.5ιminecraft:golden_pickaxeι15% mining speed boost per levelι4ι7ιFists can break natural stoneι7ι4ιFists can break oresι10ι1ιFists can break obsidian〉,
 		〈runιskillPathι4ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι5% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
 		〈runιskillPathι3ιDefenseιι1.5ι-1.5ι0.5ι-0.5ιminecraft:shieldι5% chance per level for resistance effect on being hitι4ι6ιThe effect lasts 4 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
 		{
@@ -268,3 +270,14 @@
 		}
 	]
 }〉
+
+
+〈toFileιout\kubejs\server_scripts\invincibility_fix.jsι// priority: 0
+
+let skilltreeLayers = [〈sliceι0ι-1ι〈readSpaceιinvincibilityFix〉〉]
+
+onEvent('player.logged_in', event => {
+  for(let layer of skilltreeLayers)
+    event.player.runCommandSilent('execute if data entity @s ForgeCaps.origins:origin_component.OriginLayers[{Layer: "'+layer+'", Origin:"origins:empty"}].Origin run origin set @s '+layer+' skilltree:blank')
+})
+〉

@@ -1,0 +1,9 @@
+{
+  "powers":[],
+  "icon": "minecraft:barrier",
+	"order": 1,
+	"impact": 0,
+  "name":"LOCKED",
+  "description":"You haven't unlocked this ability.",
+  "unchoosable": true
+}
