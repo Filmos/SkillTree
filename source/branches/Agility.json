@@ -1,0 +1,16 @@
+{
+  "uid": 4,
+  "name": "Agility",
+  "description": "5% speed boost per level",
+  "icon": "minecraft:sugar",
+  "requires": null,
+  "position": {
+    "start": {"x": 1.5, "y": 1.5},
+    "step": {"x": 0.5, "y": 0.5}
+  },
+  "specialLevels": [
+    {"level": 4, "name": "Permanent speed I effect", "lastsFor": 6},
+    {"level": 7, "name": "Resistance to slowness", "lastsFor": 4},
+    {"level": 10, "name": "Permanent speed II effect", "lastsFor": 1}
+  ]
+}

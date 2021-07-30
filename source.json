@@ -73,10 +73,10 @@
 }〉
 
 
-〈defιskillPathιparι〈forιiι10ι{
-	title: "〈=ᛍtitleι〈varιpar_1〉 〈romanι〈varιiι+1〉〉〉",
-	icon: 〈ifι〈forᛍspecialιjι〈varιpar_countι/3-3〉ι〈ifι〈varιiι+1〉==〈varιpar_〈varιjι*3+9〉〉ι1〉〉ι{
-		id: "〈varιpar_7〉",
+〈defιskillPathιparι〈jsonιcι〈readFileιsource/branches/〈varιpar_0〉.json〉〉〈forιiι10ι{
+	title: "〈=ᛍtitleι〈varιc_name〉 〈romanι〈varιiι+1〉〉〉",
+	icon: 〈ifι〈forᛍspecialιjι〈varιc_specialLevels.length〉ι〈ifι〈varιiι+1〉==〈varιc_specialLevels.〈varιj〉.level〉ι1〉〉ι{
+		id: "〈varιc_icon〉",
 		Count: 1b,
 		tag: {
 			Enchantments: [{
@@ -84,67 +84,67 @@
 				id: "minecraft:power"
 			}]
 		}
-	}ι"〈varιpar_7〉"〉,
-	x: 〈roundι〈varιiι*〈varιpar_5〉+〈varιpar_3〉〉ι0.5〉d,
-	y: 〈roundι〈varιiι*〈varιpar_6〉+〈varιpar_4〉〉ι0.5〉d,
-	subtitle: "〈varιpar_8〉",
+	}ι"〈varιc_icon〉"〉,
+	x: 〈roundι〈varιiι*〈varιc_position.step.x〉+〈varιc_position.start.x〉〉ι0.5〉d,
+	y: 〈roundι〈varιiι*〈varιc_position.step.y〉+〈varιc_position.start.y〉〉ι0.5〉d,
+	subtitle: "〈varιc_description〉",
 	description: [
-		〈forιjι〈varιpar_countι/3-3〉ι"&〈compareι〈varιiι+1〉ι〈varιpar_〈varιjι*3+9〉〉ι8ιaι7〉Level 〈varιpar_〈varιjι*3+9〉〉: 〈varιpar_〈varιjι*3+11〉〉"ι,
+		〈forιjι〈varιc_specialLevels.length〉ι"&〈compareι〈varιiι+1〉ι〈varιc_specialLevels.〈varιj〉.level〉ι8ιaι7〉Level 〈varιc_specialLevels.〈varιj〉.level〉: 〈varιc_specialLevels.〈varιj〉.name〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987-14〉〉",ι〈ifι〈varιpar_2〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιpar_2〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
-	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987-14〉〉",ι〈ifι〈varιc_requires〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιc_requires〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
+	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+1〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+1〉〉",
 		type: "checkmark",
 		title: "Cost: 〈ifι〈varιspecial〉ι2 skill pointsι1 skill point〉"
 	}],
 	rewards: [{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+2〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+2〉〉",
 		type: "command",
 		auto: "invisible",
-		command: "/origin set @p skilltree:〈caseᛍfilenameιlowerι〈varιpar_1〉〉 skilltree:〈varιfilename〉/〈varιiι+1〉",
+		command: "/origin set @p skilltree:〈caseᛍfilenameιlowerι〈varιc_name〉〉 skilltree:〈varιfilename〉/〈varιiι+1〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+3〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+3〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/scoreboard players remove @p SkillPoints 〈varιskillCost〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+4〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+4〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/scoreboard players add @p UsedSkillPoints 〈varιskillCost〉",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+5〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+5〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p reset 10F0F0F0F0F0F000",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+6〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+6〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p[scores={SkillPoints=1..}] complete 10F0F0F0F0F0F001",
 		player_command: false
 	},{
-		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιpar_0〉*1987+7〉〉",
+		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+7〉〉",
 		type: "command",
 		auto: "invisible",
 		command: "/ftbquests change_progress @p[scores={SkillPoints=2..}] complete 10F0F0F0F0F0F002",
 		player_command: false
 	}]
 〈toFileιout\kubejs\data\skilltree\powers\〈varιfilename〉\base_〈varιiι+1〉.jsonι
-〈runιbasepower〈varιpar_1〉ι〈varιiι+1〉〉
+〈runιbasepower〈varιc_name〉ι〈varιiι+1〉〉
 〉}〈toFileιout\kubejs\data\skilltree\origins\〈varιfilename〉\〈varιiι+1〉.jsonι{
   "powers":[
-		"skilltree:〈varιfilename〉/base_〈varιiι+1〉"〈forιjι〈varιpar_countι/3-3〉ι〈-ι
-		〉〈ifι〈varιpar_〈varιjι*3+9〉〉+〈varιpar_〈varιjι*3+10〉〉>〈varιiι+1〉 && 〈varιiι+1〉>=〈varιpar_〈varιjι*3+9〉〉ι,
+		"skilltree:〈varιfilename〉/base_〈varιiι+1〉"〈forιjι〈varιc_specialLevels.length〉ι〈-ι
+		〉〈ifι〈varιc_specialLevels.〈varιj〉.level〉+〈varιc_specialLevels.〈varιj〉.lastsFor〉>〈varιiι+1〉 && 〈varιiι+1〉>=〈varιc_specialLevels.〈varιj〉.level〉ι,
 		"skilltree:〈varιfilename〉/upgrade_〈varιjι+1〉"〉〉
 	],
-  "icon": "〈varιpar_7〉",
+  "icon": "〈varιc_icon〉",
 	"order": 〈varιiι+1〉,
 	"impact": 1,
   "name":"〈varιtitle〉",
@@ -160,11 +160,11 @@
 	  〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
 		〉
   ],
-  "order": 〈varιpar_0ι+10〉
+  "order": 〈varιc_uidι+10〉
 }
 
 〉〈toSpaceιresetLayersι,{
-  id: "〈uidιFFFFFFFFFFFFFFFFι〈varιpar_0ι*5+198〉〉",
+  id: "〈uidιFFFFFFFFFFFFFFFFι〈varιc_uidι*5+198〉〉",
   type: "command",
   auto: "invisible",
   command: "/origin set @p skilltree:〈varιfilename〉 skilltree:blank",
@@ -220,11 +220,10 @@
 				}
 			]
 		},
-		〈-ιsyntax: uid; name; first numerical dependency; start pos x; start pos y; pos step x; pos step y; icon id; subtitle; level required for upgrade...; for how many levels upgrade should be included; name of upgrade...〉
-    〈runιskillPathι1ιHasteιι-1.5ι-1.5ι-0.5ι-0.5ιminecraft:golden_pickaxeι15% mining speed boost per levelι4ι7ιFists can break natural stoneι7ι4ιFists can break oresι10ι1ιFists can break obsidian〉,
-		〈runιskillPathι2ιOffenseιι1.5ι-1.5ι0.5ι-0.5ιtwilightforest:fiery_swordι4% chance per level to lit enemy on fireι4ι7ιFire lasts longerι7ι3ιChance for wither effect as wellι10ι1ιWither effect is now level 2〉,
-    〈runιskillPathι3ιDefenseιι-1.5ι1.5ι-0.5ι0.5ιminecraft:shieldι5% chance per level for resistance effect on being hitι4ι6ιThe effect lasts 4 secondsι7ι3ιThe effect is now level 2ι10ι1ιThe effect lasts 6 seconds〉,
-		〈runιskillPathι4ιAgilityιι1.5ι1.5ι0.5ι0.5ιminecraft:sugarι5% speed boost per levelι4ι6ιPermanent speed I effectι7ι4ιResistance to slownessι10ι1ιPermanent speed II effect〉,
+    〈runιskillPathιHaste〉,
+		〈runιskillPathιOffense〉,
+    〈runιskillPathιDefense〉,
+		〈runιskillPathιAgility〉,
 		{
 			title: "I AM ALL",
 			icon: {

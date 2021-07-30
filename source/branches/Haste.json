@@ -1,0 +1,16 @@
+{
+  "uid": 1,
+  "name": "Haste",
+  "description": "15% mining speed boost per level",
+  "icon": "minecraft:golden_pickaxe",
+  "requires": null,
+  "position": {
+    "start": {"x": -1.5, "y": -1.5},
+    "step": {"x": -0.5, "y": -0.5}
+  },
+  "specialLevels": [
+    {"level": 4, "name": "Fists can break natural stone", "lastsFor": 7},
+    {"level": 7, "name": "Fists can break ores", "lastsFor": 4},
+    {"level": 10, "name": "Fists can break obsidian", "lastsFor": 1}
+  ]
+}
