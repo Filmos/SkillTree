@@ -3,7 +3,8 @@
   "name": "Offense",
   "description": "4% chance per level to lit enemy on fire",
   "icon": "twilightforest:fiery_sword",
-  "requires": null,
+  "length": 10,
+  "requires": [],
   "position": {
     "start": {"x": 1.5, "y": -1.5},
     "step": {"x": 0.5, "y": -0.5}
@@ -12,5 +13,6 @@
     {"level": 4, "name": "Fire lasts longer", "lastsFor": 7},
     {"level": 7, "name": "Chance for wither effect as well", "lastsFor": 3},
     {"level": 10, "name": "Wither effect is now level 2", "lastsFor": 1}
-  ]
+  ],
+  "cost": {"normal": 1, "special": 2}
 }

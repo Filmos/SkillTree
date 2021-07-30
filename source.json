@@ -71,9 +71,57 @@
 	"name": "Fire touch",
 	"description": "You have 〈roundι〈varιp_0ι*4〉〉% chance to 〈ifι〈varιp_0〉<4ιbriefly 〉set the hit entity on fire."
 }〉
+〈defιbasepowerVitalityιpι{
+  "type":"origins:attribute",
+  "modifier": {
+      "name": "Vitality boost",
+      "attribute": "minecraft:generic.max_health",
+      "value": 〈varιp_0ι*2〉.0,
+      "operation": "addition"
+  },
+  "name": "Health Boost",
+  "description": "You have 〈varιp_0〉 more heart〈ifι〈varιp_0〉>1ιs〉."
+}〉
+〈defιbasepowerStaminaιpι{
+  "type": "origins:modify_exhaustion",
+  "modifier": {
+      "name": "Stamina boost",
+      "value": 〈varιp_0ι*(-0.2)〉,
+      "operation": "multiply_total"
+  },
+  "name": "Endurance",
+  "description": "You take 〈ifι〈varιp_0〉<5ι〈varιp_0ι*20〉% lessιno〉 exhaustion from movement."
+}〉
+〈defιbasepowerStrengthιpι{
+  "type": "origins:multiple",
+  "melee": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Strength boost",
+        "value": 〈varιp_0ι*(0.1)〉,
+        "operation": "multiply_total"
+    }
+  },
+  "ranged": {
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+        "name": "Strength boost",
+        "value": 〈varιp_0ι*(0.1)〉,
+        "operation": "multiply_total"
+    }
+  },
+  "name": "Endurance",
+  "description": "You deal 〈varιp_0ι*10〉% more damage."
+}〉
+〈defιbasepowerNightvisionιpι{
+  "type": "origins:night_vision",
+  "strength": 〈roundι1/(2**(5-〈varιp_0〉))ι0.001〉,
+  "name": "Night Sight",
+  "description": "Your vision is improved in the dark."
+}〉
 
 
-〈defιskillPathιparι〈jsonιcι〈readFileιsource/branches/〈varιpar_0〉.json〉〉〈forιiι10ι{
+〈defιskillPathιparι〈jsonιcι〈readFileιsource/branches/〈varιpar_0〉.json〉〉〈forιiι〈varιc_length〉ι{
 	title: "〈=ᛍtitleι〈varιc_name〉 〈romanι〈varιiι+1〉〉〉",
 	icon: 〈ifι〈forᛍspecialιjι〈varιc_specialLevels.length〉ι〈ifι〈varιiι+1〉==〈varιc_specialLevels.〈varιj〉.level〉ι1〉〉ι{
 		id: "〈varιc_icon〉",
@@ -85,19 +133,19 @@
 			}]
 		}
 	}ι"〈varιc_icon〉"〉,
-	x: 〈roundι〈varιiι*〈varιc_position.step.x〉+〈varιc_position.start.x〉〉ι0.5〉d,
-	y: 〈roundι〈varιiι*〈varιc_position.step.y〉+〈varιc_position.start.y〉〉ι0.5〉d,
+	x: 〈roundι〈varιiι*〈varιc_position.step.x〉+〈varιc_position.start.x〉〉ι0.1〉d,
+	y: 〈roundι〈varιiι*〈varιc_position.step.y〉+〈varιc_position.start.y〉〉ι0.1〉d,
 	subtitle: "〈varιc_description〉",
 	description: [
 		〈forιjι〈varιc_specialLevels.length〉ι"&〈compareι〈varιiι+1〉ι〈varιc_specialLevels.〈varιj〉.level〉ι8ιaι7〉Level 〈varιc_specialLevels.〈varιj〉.level〉: 〈varιc_specialLevels.〈varιj〉.name〉"ι,
 		〉
 	],
-	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987-14〉〉",ι〈ifι〈varιc_requires〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιc_requires〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι2ι1〉"],
+	dependencies: [〈ifι〈varιi〉>0ι"〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987-14〉〉",ι〈forιjι〈varιc_requires.length〉ι"〈uidιFFFFFFFFFFFFFFFFι〈varιc_requires.〈varιj〉.levelι*15+〈varιc_requires.〈varιj〉.branch〉*1987-15〉〉",〉〉"10F0F0F0F0F0F00〈ifᛍskillCostι〈varιspecial〉ι〈varιc_cost.special〉ι〈varιc_cost.normal〉〉"],
 	id: "〈uidᛍidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987〉〉", 〈toSpaceιallQuestsι,"〈varιid〉"〉
 	tasks: [{
 		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+1〉〉",
 		type: "checkmark",
-		title: "Cost: 〈ifι〈varιspecial〉ι2 skill pointsι1 skill point〉"
+		title: "Cost: 〈varιskillCost〉 skill point〈ifι〈varιskillCost〉>1ιs〉"
 	}],
 	rewards: [{
 		id: "〈uidιFFFFFFFFFFFFFFFFι〈varιiι*15+〈varιc_uid〉*1987+2〉〉",
@@ -157,7 +205,7 @@
   "replace": false,
   "origins": [
     "skilltree:blank",
-	  〈forιiι10ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
+	  〈forιiι〈varιc_length〉ι"skilltree:〈varιfilename〉/〈varιiι+1〉"ι,
 		〉
   ],
   "order": 〈varιc_uidι+10〉
@@ -224,6 +272,10 @@
 		〈runιskillPathιOffense〉,
     〈runιskillPathιDefense〉,
 		〈runιskillPathιAgility〉,
+		〈runιskillPathιNightvision〉,
+		〈runιskillPathιStrength〉,
+		〈runιskillPathιVitality〉,
+		〈runιskillPathιStamina〉,
 		{
 			title: "I AM ALL",
 			icon: {

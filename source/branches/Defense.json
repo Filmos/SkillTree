@@ -3,7 +3,8 @@
   "name": "Defense",
   "description": "5% chance per level for resistance effect on being hit",
   "icon": "minecraft:shield",
-  "requires": null,
+  "length": 10,
+  "requires": [],
   "position": {
     "start": {"x": -1.5, "y": 1.5},
     "step": {"x": -0.5, "y": 0.5}
@@ -12,5 +13,6 @@
     {"level": 4, "name": "The effect lasts 4 seconds", "lastsFor": 6},
     {"level": 7, "name": "The effect is now level 2", "lastsFor": 3},
     {"level": 10, "name": "The effect lasts 6 seconds", "lastsFor": 1}
-  ]
+  ],
+  "cost": {"normal": 1, "special": 2}
 }

@@ -1,0 +1,14 @@
+{
+  "uid": 8,
+  "name": "Stamina",
+  "description": "20% less exhaustion per level",
+  "icon": "create:crushed_gold_ore",
+  "length": 5,
+  "requires": [{"branch": 4, "level": 3}],
+  "position": {
+    "start": {"x": 2.3, "y": 3.2},
+    "step": {"x": -0.2, "y": 0.7}
+  },
+  "specialLevels": [],
+  "cost": {"normal": 2}
+}

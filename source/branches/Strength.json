@@ -1,0 +1,14 @@
+{
+  "uid": 6,
+  "name": "Strength",
+  "description": "10% damage boost per level",
+  "icon": "mowziesmobs:barakoa_mask_fury",
+  "length": 5,
+  "requires": [{"branch": 2, "level": 3}],
+  "position": {
+    "start": {"x": 2.3, "y": -3.2},
+    "step": {"x": -0.2, "y": -0.7}
+  },
+  "specialLevels": [],
+  "cost": {"normal": 2}
+}
