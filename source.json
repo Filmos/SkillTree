@@ -360,7 +360,8 @@
 let skilltreeLayers = [〈sliceι0ι-1ι〈readSpaceιinvincibilityFix〉〉]
 
 onEvent('player.logged_in', event => {
+  let server = event.getServer()
   for(let layer of skilltreeLayers)
-    event.player.runCommandSilent('execute if data entity @s ForgeCaps.origins:origin_component.OriginLayers[{Layer: "'+layer+'", Origin:"origins:empty"}].Origin run origin set @s '+layer+' skilltree:blank')
+    event.player.runCommandSilent('execute as '+event.player.name+' if data entity @s ForgeCaps.origins:origin_component.OriginLayers[{Layer: "'+layer+'", Origin:"origins:empty"}].Origin run origin set @s '+layer+' skilltree:blank')
 })
 〉
